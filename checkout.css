@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.breadcrumb {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#totalprice {
+    color: #e53935; /* Red color for total price */
+}
+.hidden {
+    display: none;
+}

@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*,
+*:after,
+*:before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:active,
+:hover,
+:focus{
+    outline:0 !important;
+    outline-offset:0;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+/* a:hover{
+    color: var(--primary-color) !important;
+} */
+
+
+ul,ol{
+    margin: 0;
+    padding: 0;
+}
+/* Variable define */
+:root {
+    --primary-color:rgb(175, 37, 37);
+    --secondry-color:#43121d;
+    --third-color:#f98169;
+    --fourth-color:#69d7f9;
+    --white-color:#fff;
+    --text-color:#555;
+    --text-grey:#999
+    --black-color:#000;
+    --primary-font: 'Roboto',sans-serif;
+    --secondry-font:'Quicksand',sans-serif;
+
+    
+}
+html{
+    scroll-behavior:smooth
+}
+body{
+    font-family:var(--primary-font);
+    font-weight: 400;
+    font-size: 100%;
+}
+/* 
+custom scrollbar
+ */
+ ::-webkit-scrollbar{
+    width: 0.625rem;
+ }
+ ::-webkit-scrollbar-track{
+    background: var(--white-color);
+ }
+ ::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+ }
+
+/* custom css start here */
+h1{
+
+    font-weight: bolder;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-bottom: 3rem;
+    color:var(--primary-color);
+
+}
+h2{
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    font-family: var(--secondry-font);
+    color:var(--secondry-color);
+    line-height: 3rem;
+    text-align: left;
+}
+h3{
+    font-weight: 700;
+    font-size:1rem;
+    text-transform: capitalize;
+    font-family: var(--secondry-font);
+    color:var(--white-color);
+    line-height: 3rem;
+    text-align: center;
+}
+
+
+h4{
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-family: var(--secondry-font);
+    color:var(--secondry-color);
+    margin-bottom: 0.5rem;
+}
+p{
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-family: var(--secondry-font);
+    color:var(--text-color);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.screen {
+    /* background-image: url('../img/contact_meat.jpg'); */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-repeat: no-repeat;    
+             
+}
+
+
+/* call butotn  */
+.main-btn{
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    color:white;
+    margin-left: 0rem;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    box-shadow:none;
+    background-color: var(--primary-color);
+    transition: all 0.41s;
+    -webkit-transition: all 0.41s;
+    -moz-transition: all 0.41s;
+    -ms-transition: all 0.41s;
+    -o-transition: all 0.41s;
+}
+.white-btn{
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    color:var(--text-color);
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.2);
+    margin-left: 1rem;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--white-color);
+    transition: all 0.41s;
+    -webkit-transition: all 0.41s;
+    -moz-transition: all 0.41s;
+    -ms-transition: all 0.41s;
+    -o-transition: all 0.41s;
+}
+.main-btn:hover{
+    background-color: transparent;
+    color: var(--black);
+}
+.white-btn:hover{
+    background-color: transparent;
+    border-color: var(--secondry-color);
+}
+
+/* button design end */

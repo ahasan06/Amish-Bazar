@@ -1,0 +1,99 @@
+
+/* ---------------------------------------------------------- */
+/* nav Css Start Here  */
+
+.info-footer p{
+    font-weight: 150;
+    font-size: 1rem;
+    font-family: var(--secondry-font);
+    color:var(--white-color);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+.p-style {
+    font-weight: 150;
+    font-size: 1rem;
+    font-family: var(--secondry-font);
+    color:var(--blc-color);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+.h3-style{
+    font-weight: 200;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-family: var(--secondry-font);
+    color:var(--white-color);
+    line-height: 3rem;
+    text-align: left;
+}
+
+.navigation-wrap .nav-item{
+    padding: 0 0.635rem;
+    transition: all 200ms linear;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+}
+.nav-link{
+    font-size: .98rem;
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: var(--primary-color);
+}
+.nav-link:hover{
+   
+   color:var(--text-color);
+   text-decoration: underline;
+}
+
+.navigation-wrap {
+    /* Add your custom styles for the navbar here */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Position it at the top of the viewport */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Adjust the z-index as needed */
+}
+
+/* Add this CSS to adjust section placement */
+section {
+    margin-top: 70PX; /* Adjust this value to match the height of your navbar */
+}
+
+/* Add this CSS to prevent text wrapping in small screens */
+
+
+/* nav css end here */
+
+
+/* footer start */
+footer {
+  padding: 1% 10%;
+}
+footer a{
+    
+    color: var(--white-color);
+    margin: 0 20px;
+    font-size: 3rem;
+}
+.social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+.socail-icon {
+    margin-top: 10px; /* Add some spacing between "Follow Us" and social icons */
+}
+
+/* Optional: Style the social icons */
+.socail-icon a {
+    margin: 5px;
+}
+
+/* footer end */

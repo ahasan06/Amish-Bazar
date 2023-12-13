@@ -1,0 +1,26 @@
+
+/* signup start here */
+.screen{
+    background-image: url('../img/contact_meat.jpg');
+}
+.box-area{
+    width: 930px;
+
+}
+
+
+@media only screen and (max-width:768px) {
+    
+
+.box-area{
+    margin: 0 20px;
+}
+
+.left-box{
+    height: 100px;
+    overflow: hidden;
+
+}
+
+} 
+
