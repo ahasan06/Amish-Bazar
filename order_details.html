@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block syle_css %}
+<link href="{% static '/assets/css/order_details.css' %}" rel="stylesheet">
+{% endblock syle_css %}
+
+{% block content %}
+{% comment %} 
+<section class="banener screen">
+
+
+<h1>Order Details</h1>
+    
+    <h2>Order Information</h2>
+    <p>Order ID: {{ order.id }}</p>
+    <p>Order ID: {{ order.customer }}</p>
+
+ <p>Date: {{ order.date_order }}</p>
+    <!-- Add other order details as needed -->
+    
+    <h2>Shipping Information</h2>
+    <span>Address: {{ shipping_address.address }}, {{ shipping_address.city }}, {{ shipping_address.state }}, {{ shipping_address.zipcode }}</span>
+    <!-- Add other shipping details as needed -->
+    
+    <h2>Order Items</h2>
+    <ul>
+        {% for item in order.orderitem_set.all %}
+            <li>{{ item.product.name }} - Quantity: {{ item.quantity }} - Total: {{ item.get_total }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Total Order</h2>
+    <p class="text-black ">Subtotal: {{ order.get_cart_total }}tk</p>
+
+   <!-- Add a link/button to download the PDF -->
+   <a href="{% url 'download_order_list_pdf' order.id %}" class="btn btn-primary">Download PDF</a></li>
+</section>
+
+     {% endcomment %}
+
+
+     <section class="banner screen">
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-header fw-bold ">
+                   <div class="row">
+                       <div class="col-lg-6">   Invoice</div>
+                       <div class="col-lg-6"> <a href="{% url 'download_order_list_pdf' order.id %}" class="btn btn-primary">Download PDF</a></div>
+                   </div>
+                 
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                       <div class="col-lg-12 d-flex ">
+
+                           <div class="col-lg-6 oder-info">
+                               <h2>Order Information</h2>
+                               <p>Order ID: {{ order.id }}</p>
+                               <p>Transaction ID: {{ order.transaction_id }}</p>
+                               <p>Customer: {{ order.customer }}</p>
+                               <p>Date: {{ order.date_order }}</p>
+                            </div>
+                        
+                               <!-- Add other order details as needed -->
+                               <div class="col-lg-6 shipping_info">
+                                  <h2>Shipping Information</h2>
+                                  <p>Address: {{ shipping_address.address }}, {{ shipping_address.city }},
+                                      {{ shipping_address.state }}, {{ shipping_address.zipcode }}</p>
+                              </div>
+
+                    </div>
+
+                    <div class="card-footer text-muted">
+                       <h2>Order Items</h2>
+                       <ul class="list-group">
+                           {% for item in order.orderitem_set.all %}
+                               <li class="list-group-item">{{ item.product.name }} - Quantity: {{ item.quantity }} - Total: {{ item.get_total }}</li>
+                           {% endfor %}
+                       </ul>
+                       <h2>Total Order</h2>
+                       <h2 class="text-black">Subtotal: {{ order.get_cart_total }}tk</h2>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+{% endblock content %}

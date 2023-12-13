@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block syle_css %}
+<link href="{% static '/assets/css/signup.css' %}" rel="stylesheet">
+{% endblock syle_css %}
+
+{% block content %}
+
+<section class="banner screen">
+    
+    <div class="container d-flex justify-content-center align-items-center min-vw 500 ">
+{% comment %} <!----------------------------login container -------------------------> {% endcomment %}
+        <div class="row border rounded-5 p-3 bg-white shadow box-area">
+            {% comment %} <!-------------------- left box------------------------- --> {% endcomment %}
+            <div class="col-md-6 rounded-5  d-flex justify-content-center align-items-center flex-column left-box" style="background: #103bbe73;">
+                
+                <div class="featured-image mb-3">
+                    <img src="{% static 'assets/img/user_login.png' %}" alt="About Us Image" class="image-fluid" width="250px" />
+                </div>
+                <p class="text-white ">Welcome</p>
+                <small class="text-wrap text-center ">Explore our Amish Bazar</small>
+
+                {% for message in messages %}
+                 <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                 <strong> {{message}} </strong>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            {% comment %} <!-------------------- Rigth box -------------------------> {% endcomment %}
+           
+            <div class="col-md-6 right-box" >
+            
+                <div class="row  align-items-end  ">
+                    <div class="header text-start   mb-4">
+                        <p>Hello,Again</p>
+                    </div>
+
+                    <form action="/authcart/login/" method="post"> 
+                        {% csrf_token %}
+                    <div class="input-group mb-3">
+                      
+                       <input type="email " id="email" name="email" class="form-control  form-control-lg bg-blue fs-6" placeholder="Email" required>
+                    </div> 
+
+                    <div class="input-group mb-3">
+                      
+                       <input type="password " id ="pass1" name="pass1" class="form-control  form-control-lg bg-blue fs-6" placeholder="Password" required>
+
+                    </div> 
+
+                    <div class="input-group mb-5 d-flex justify-content-between ">
+                      <div class="form-check">
+
+                        <input type="checkbox" class="form-check-input " id="formCheck">
+                        <label for="formCheck" class="form-check-label text-secondary "><small>Remember Me</small></label>
+
+                      </div>
+                            
+                      <div class="forgot">
+                        <small><a href="#">Forgot Password?</a></small>
+                      </div>
+
+
+                    </div> 
+                  
+                    <div class="input-group mb-3">
+                        <button type="submit" class="white-btn w-100 text-black rounded-5 fs-6 ">Login</button>
+                    </div>
+                
+                    
+                    <div class="row">
+                       <small class="text-dark text-decoration-underline  ">New User? <a href="/authcart/signup/">Signup</a></small>
+                    </div>
+                </form> 
+
+                </div>
+            
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</section>
+
+    
+          
+{% endblock content %}

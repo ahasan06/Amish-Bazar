@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block syle_css %}
+<link href="{% static '/assets/css/order_list_view.css' %}" rel="stylesheet">
+{% endblock syle_css %}
+
+{% block content %}
+
+  
+        <section class="screen">
+            <h1>Order List</h1>
+            <ul class="list-group">
+                {% for order in orders %}
+                    <li class="list-group-item">
+                        <a href="{% url 'order_details' order.id %}">Invoice ID: {{ order.id }}</a>
+                      
+                    </li>
+                {% endfor %}
+            </ul>
+            <li>   
+               
+        </section>
+
+ 
+
+
+          
+{% endblock content %}

@@ -1,0 +1,80 @@
+ <!-- {% extends 'base.html' %}
+{% load static %}
+
+{% block syle_css %}
+<link href="{% static '/assets/css/order_details.css' %}" rel="stylesheet">
+{% endblock syle_css %}
+
+{% block content %}
+
+
+
+    
+          
+{% endblock content %}  -->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link rel="stylesheet" href="/AmishBazar/static/assets/css/invoice.css">
+
+
+ </head>
+
+ <body>
+     <section class="secreen">
+         <div class="container">
+             <div class="card text-center">
+                 <div class="card-header fw-bold ">
+                    <div class="row">
+                        <div class="col-lg-6">   Invoice</div>
+                        <div class="col-lg-6"> <a href="{% url 'download_order_list_pdf' order.id %}" class="btn btn-primary">Download PDF</a></div>
+                    </div>
+                  
+                 </div>
+
+                 <div class="card-body">
+                     <div class="row">
+                        <div class="col-lg-12 d-flex ">
+                            <div class="col-lg-6">
+                                <h2>Order Information</h2>
+                                <p>Order ID: {{ order.id }}</p>
+                                <p>Customer: {{ order.customer }}</p>
+                                <p>Date: {{ order.date_order }}</p>
+                            
+                            </div>
+                                <!-- Add other order details as needed -->
+                                <div class="col-lg-6">
+                                   <h2>Shipping Information</h2>
+                                   <p>Address: {{ shipping_address.address }}, {{ shipping_address.city }},
+                                       {{ shipping_address.state }}, {{ shipping_address.zipcode }}</p>
+                               </div>
+                        </div>
+            
+
+                     </div>
+
+                     <div class="card-footer text-muted">
+                        <h2>Order Items</h2>
+                        <ul class="list-group">
+                            {% for item in order.orderitem_set.all %}
+                                <li class="list-group-item">{{ item.product.name }} - Quantity: {{ item.quantity }} - Total: {{ item.get_total }}</li>
+                            {% endfor %}
+                        </ul>
+                        <h2>Total Order</h2>
+                        <p class="text-black">Subtotal: {{ order.get_cart_total }}tk</p>
+                     </div>
+
+                 </div>
+             </div>
+     </section>
+ </body>
+
+ </html>

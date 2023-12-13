@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block syle_css %}
+<link href="{% static '/assets/css/home.css' %}" rel="stylesheet">
+{% endblock syle_css %}
+
+ 
+
+{% block body %}
+
+
+
+<!-- <div class="banner-container d-flex justify-content-center align-items-center">
+        <div class="banner-contents text-center">
+            <h1 class="font-wight-bolder mb-5">Larger Fish and Meat Market</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget feugiat ipsum, a pulvinar dolor.</p>
+            <a href="#" class="main-btn">Learn More</a>
+        </div>
+    </div> -->
+<div class="row">
+
+    <div class="col-lg-2">
+        <div class="cartegory-screen box-element">   
+       
+        <div class="cat-element mt-3">
+            <div class="mt-3">
+                <h6><strong style="font-size: 50px; ">category</strong></h6>
+                <hr>
+            </div>
+            
+            {% for product, range, nSlides in allProds %}
+            <li class="category-element" ><a class="text-black" href="#" >{{product.0.category}}</a></li>
+            {% endfor %}
+
+        </div>
+        <img  src="{% static 'assets/img/cat-img.gif' %}" alt="About Us Image" style="display: flex; align-items: end;" class="image-fluid " width="250px" />
+    </div>
+    </div>
+
+    <div class="col-lg-10">
+        <div class="banner">
+            <div class="banner-contents text-center">
+                <h1 class="font-wight-bolder mb-5">Larger Fish and Meat Market</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget feugiat ipsum, a pulvinar dolor.
+                </p>
+                <a href="#" class="main-btn">Learn More</a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+    <div class=" d-flex justify-content-center align-items-center text-success">
+        <h1>Welcome to Mega Shop</h1>
+    </div>
+    <div class=" d-flex justify-content-center align-items-center text-success">
+        <p>Check our Fresh Meats</p>
+    </div>
+    {% comment %} Cart section start here {% endcomment %}
+
+   
+    <div class="container">
+        {% for product, range, nSlides in allProds %}
+        <div class="row  my-3">
+            <h3 class="my-3 text-center text-success bg-light">{{product.0.category}} Flashsale</h3>
+            {% for products in product %}
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{{products.image.url}}">
+                <div class="box-element product">
+                    <h6><strong>{{products.name}}</strong></h6>
+                    <h6>{{products.desc|slice:"0:53"}}...</h6>
+                    <hr>
+                    <button data-prod="{{products.id}}" class="update-cart btn btn-outline-danger" data-prod="{{ product.id }}" data-action="add">Add to Cart</button>
+                    <a class="btn btn-outline-success " href="#">View</a>
+                    <a class="btn btn-success " href="#">Available</a>
+                    <h4 style="display: inline-block; float:right;" >{{products.price}}&#2547; </h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Vendor JS Files -->
+
+    <!-- Include jQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- Include Bootstrap JS -->
+
+
+    <!-- Template Main JS File -->
+    <script src="{% static '/assets/js/cart.js' %}"></script>
+
+
+
+    {% endblock body %}

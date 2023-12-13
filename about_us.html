@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block syle_css %}
+<link href="{% static '/assets/css/about_us.css' %}" rel="stylesheet">
+{% endblock syle_css %}
+
+{% block body %}
+
+<div class="center_vertical ">
+  <div class="about-us-section bg-light">
+    <div class="container">
+      <div class="row">
+
+
+        <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+
+          <div class="img-head">
+            <img src="static/assets/img/about_img.png" alt="About Us Image" />
+          </div>
+
+        </div>
+        
+        <div class="col-12 col-lg-6">
+          <h2 class="text-head">KNOW MORE ABOUT US</h2>
+          <div class="break-small mb-2"></div>
+
+          <p class="text-para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            pariatur odio molestiae quis blanditiis id illum nisi explicabo
+            natus deserunt a quia officia, alias atque dolore! Labore a voluptas
+            veniam.
+          </p>
+<!-- box html start -->
+          <div class="row">
+
+            <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <div class="box">
+                  <i class="fa-solid fa-users mb-3"></i>
+                    <h3 class="box-text">TOTAL CLIENTS</h3>
+                    <p class="box-card-number mb-0" >999+</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <div class="box ">
+                    <i class="fa-solid fa-handshake mb-3"></i>
+                    <h3 class="box-text">REGULAR CLIENTS</h3>
+                    <p class="box-card-number mb-0" >100+</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <div class="box ">
+                     <i class="fa-solid fa-shop mb-3"></i>
+                    <h3 class="box-text">SHOP DELIVERS</h3>
+                    <p class="box-card-number mb-0" >10+</p>
+                </div>
+            </div>
+<!-- box html ends here -->
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
